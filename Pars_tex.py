@@ -1,7 +1,9 @@
-f=open('sdddd.txt')
+import matplotlib.pyplot as plt
+f=open('..\sdddd.txt',"r")
+VarNames=["a","b","c","d","e","f","g"]
 
-line=f.readline()
-Mylist=line.split(' ')
-
-for x in Mylist:
-    print(x)
+Data=f.readlines()
+counter=0
+for i_list in Data:
+    counter=counter +1
+    V=(i_list.split(" ")).strip(" \n")
