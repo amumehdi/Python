@@ -1,6 +1,13 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import re
+from tkinter import Tk     # from tkinter import Tk for Python 3.x
+from tkinter.filedialog import askopenfilename
+
+Tk().withdraw() # we don't want a full GUI, so keep the root window from appearing
+filename = askopenfilename() # show an "Open" dialog box and return the path to the selected file
+print(filename)
+
 FileName='sdddd.txt'
 Fields=["F1","F2","F3","F4","F5","F6","F7","F8","F9","F10","F11","F12",]
 F1=[]
