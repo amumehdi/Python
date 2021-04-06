@@ -48,12 +48,14 @@ for i_list in DataLines:
 def add_int_decimal(x_f,x_decimal):
     return float(int(x_f)+x_decimal/10000)
 
-error_x_map= map(lambda xg, xr: xg-xr, F1, F5)
-error_y_map= map(lambda yg, yr: yg-yr, F2, F6)
-error_x=list(error_x_map)
-error_y=list(error_y_map)
 x_precise= list(map(add_int_decimal, F1, F11 ))
 y_precise= list(map(add_int_decimal, F2, F12 ))
+
+error_x_map= map(lambda xg, xr: xg-xr, x_precise, F5)
+error_y_map= map(lambda yg, yr: yg-yr, y_precise, F6)
+error_x=list(error_x_map)
+error_y=list(error_y_map)
+
 
 # %%
 ####### these should always remain the same
@@ -77,7 +79,7 @@ plt.xlabel('Samlpes')
 
 # %%
 fig2=plt.figure(2)
-plt.plot(F1,F2,label="Goliath Trajectory")
+plt.plot(x_precise,y_precise,label="Goliath Trajectory")
 plt.plot(F5,F6,label="Generated Refrence")
 plt.legend()
 plt.grid()
