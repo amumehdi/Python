@@ -5,7 +5,7 @@ import re
 from tkinter import Tk     # from tkinter import Tk for Python 3.x
 from tkinter.filedialog import askopenfilename
 
-Tk().withdraw() # we don't want a full GUI, so keep the root window from appearing
+#Tk().withdraw() # we don't want a full GUI, so keep the root window from appearing
 Filename = askopenfilename() # show an "Open" dialog box and return the path to the selected file
 print(Filename)
 f=open(Filename)
@@ -70,7 +70,7 @@ plt.plot(np.arange(0,len(y_precise),1),y_precise,label="tcp y precise")
 plt.plot(np.arange(0,len(F5),1),F5,label="Ref Position x")
 plt.plot(np.arange(0,len(F6),1),F6,label="Ref Position y")
 #plt.plot(np.arange(0,len(F7),1),F7,label="Ref Position z")
-#plt.plot(np.arange(0,len(F8),1),F8,label="Ref Position theta")
+plt.plot(np.arange(0,len(F8),1),F8,label="theta from Encoder")
 plt.legend()
 plt.grid()
 #plt.ioff()
@@ -91,15 +91,21 @@ plt.plot(np.arange(0,len(error_x)), error_x, label="error x ")
 plt.plot(np.arange(0,len(error_y)), error_y, label="error y ")
 plt.legend()
 plt.grid()
-plt.ylabel('Y') 
-plt.xlabel('X')
+plt.ylabel('mm') 
+plt.xlabel('samples')
 # %%
 #######
 
-#plt.plot(np.arange(0,len(F9),1),F9,label="goliathPos.theta")
-#plt.plot(np.arange(0,len(F10),1),F10,label="theta_odo_accu_filt")
+fig4=plt.figure(4)
+plt.plot(np.arange(0,len(F9),1),F9,label="tower 1")
+plt.plot(np.arange(0,len(F10),1),F10,label="tower 2")
 #plt.plot(np.arange(0,len(F11),1),F11,label="x decimal ")
 #plt.plot(np.arange(0,len(F12),1),F12,label="y decimal")
+plt.legend()
+plt.grid()
+plt.ylabel('mm') 
+plt.xlabel('samples')
+
 plt.show()
 plt.close()
 
