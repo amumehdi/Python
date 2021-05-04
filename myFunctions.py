@@ -48,3 +48,15 @@ def pars_Qt():
         line_counter=line_counter +1
     return F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12 
 
+
+def float2bit(x):
+    import struct
+    packed = struct.unpack('i 4s f', 10, b'John', 2500)
+    print(packed)
+    y=6
+    return y
+# %%
+import struct 
+x=2.2
+y= struct.pack("> f", x)
+print (y)
