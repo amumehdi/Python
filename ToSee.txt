@@ -1,2 +1,3 @@
 https://www.youtube.com/watch?v=31igoWxauEQ -> sonarQube on AWS for JAVA
-https://3.137.15.25/
+https://3.137.15.25/ -> github springa
+https://automationstepbystep.com/
